@@ -34,4 +34,7 @@ class Square:
             pygame.draw.rect(window, self.draw_colour, self.rect)
 
         if self.piece is not None:
-            window.blit(self.piece.img, (self.abs_x, self.abs_y))
+            # centers the piece in the square
+            piece_center_rect = self.piece.img.get_rect()
+            piece_center_rect.center = self.rect.center
+            window.blit(self.piece.img, piece_center_rect.topleft)

@@ -7,6 +7,10 @@ class Queen(Piece):
         img_path = f"..\\images\\{colour}-queen.png"
         self.img = pygame.image.load(img_path).convert_alpha()
 
+        # scales the piece's image - makes room to place number and letter for square
+        new_size = self.resize_img(self.img)
+        self.img = pygame.transform.scale(self.img, new_size)
+
     # finds what moves are possible from the piece's current position
     def get_legal_moves(self):
         print(f"I am a QUEEN")

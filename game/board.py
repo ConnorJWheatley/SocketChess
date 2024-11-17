@@ -43,18 +43,11 @@ class Board:
                 )
         return all_squares
 
-    def draw_board(self, window):
-        for square in self.squares:
-            square.draw(window)
-
     def get_square_from_pos(self, pos):
         # Given a pos (x, y) in grid coordinates, return the square object at that position.
         for square in self.squares:
             if (square.x, square.y) == (pos[0], pos[1]):
                 return square
-
-    def get_piece_from_pos(self, pos):
-        return self.get_square_from_pos(pos).piece
 
     def setup_pieces(self):
         # mapping of piece type to class
